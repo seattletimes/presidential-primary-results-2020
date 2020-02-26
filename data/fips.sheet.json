@@ -1,0 +1,158 @@
+{
+  "53001": {
+    "key": 53001,
+    "county": "Adams County"
+  },
+  "53003": {
+    "key": 53003,
+    "county": "Asotin County"
+  },
+  "53005": {
+    "key": 53005,
+    "county": "Benton County"
+  },
+  "53007": {
+    "key": 53007,
+    "county": "Chelan County"
+  },
+  "53009": {
+    "key": 53009,
+    "county": "Clallam County"
+  },
+  "53011": {
+    "key": 53011,
+    "county": "Clark County"
+  },
+  "53013": {
+    "key": 53013,
+    "county": "Columbia County"
+  },
+  "53015": {
+    "key": 53015,
+    "county": "Cowlitz County"
+  },
+  "53017": {
+    "key": 53017,
+    "county": "Douglas County"
+  },
+  "53019": {
+    "key": 53019,
+    "county": "Ferry County"
+  },
+  "53021": {
+    "key": 53021,
+    "county": "Franklin County"
+  },
+  "53023": {
+    "key": 53023,
+    "county": "Garfield County"
+  },
+  "53025": {
+    "key": 53025,
+    "county": "Grant County"
+  },
+  "53027": {
+    "key": 53027,
+    "county": "Grays Harbor County"
+  },
+  "53029": {
+    "key": 53029,
+    "county": "Island County"
+  },
+  "53031": {
+    "key": 53031,
+    "county": "Jefferson County"
+  },
+  "53033": {
+    "key": 53033,
+    "county": "King County"
+  },
+  "53035": {
+    "key": 53035,
+    "county": "Kitsap County"
+  },
+  "53037": {
+    "key": 53037,
+    "county": "Kittitas County"
+  },
+  "53039": {
+    "key": 53039,
+    "county": "Klickitat County"
+  },
+  "53041": {
+    "key": 53041,
+    "county": "Lewis County"
+  },
+  "53043": {
+    "key": 53043,
+    "county": "Lincoln County"
+  },
+  "53045": {
+    "key": 53045,
+    "county": "Mason County"
+  },
+  "53047": {
+    "key": 53047,
+    "county": "Okanogan County"
+  },
+  "53049": {
+    "key": 53049,
+    "county": "Pacific County"
+  },
+  "53051": {
+    "key": 53051,
+    "county": "Pend Oreille County"
+  },
+  "53053": {
+    "key": 53053,
+    "county": "Pierce County"
+  },
+  "53055": {
+    "key": 53055,
+    "county": "San Juan County"
+  },
+  "53057": {
+    "key": 53057,
+    "county": "Skagit County"
+  },
+  "53059": {
+    "key": 53059,
+    "county": "Skamania County"
+  },
+  "53061": {
+    "key": 53061,
+    "county": "Snohomish County"
+  },
+  "53063": {
+    "key": 53063,
+    "county": "Spokane County"
+  },
+  "53065": {
+    "key": 53065,
+    "county": "Stevens County"
+  },
+  "53067": {
+    "key": 53067,
+    "county": "Thurston County"
+  },
+  "53069": {
+    "key": 53069,
+    "county": "Wahkiakum County"
+  },
+  "53071": {
+    "key": 53071,
+    "county": "Walla Walla County"
+  },
+  "53073": {
+    "key": 53073,
+    "county": "Whatcom County"
+  },
+  "53075": {
+    "key": 53075,
+    "county": "Whitman County"
+  },
+  "53077": {
+    "key": 53077,
+    "county": "Yakima County"
+  }
+}

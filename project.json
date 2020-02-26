@@ -2,7 +2,7 @@
   "s3": {
     "stage": {
       "bucket": "projects-staging.seattletimes.com",
-      "path": ""
+      "path": "mover-hades"
     },
     "live": {
       "bucket": "projects.seattletimes.com",
@@ -15,7 +15,7 @@
   "url": "",
   "post_id": 0,
   "image": "assets/social.jpg",
-  "sheets": [],
+  "sheets": ["11LF6Hqq79hGrzVX0vcgWix6KEc0sZDkUPxzxX9-Nj1E"],
   "docs": [],
   "embedded": true,
   "production": false

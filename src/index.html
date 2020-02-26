@@ -1,3 +1,45 @@
+<%
+
+var date = new Date();
+var hours = date.getHours();
+var amPM = hours >= 12 ? "PM" : "AM";
+if (hours > 12) hours -= 12;
+var minutes = date.getMinutes();
+if (minutes < 10) minutes = "0" + minutes;
+var timestring = hours + ":" + minutes + " " + amPM;
+
+var statewide = {};
+var counties = {};
+var raw = json.results.filter(function(row) {
+  return row.statepostal == "WA";
+});
+
+raw.forEach(function(row) {
+  row.votepct *= 100;
+  if (row.reportingunitid == "state-1") {
+    statewide[row.last] = row;
+  } else {
+    var county = row.reportingunitname;
+    if (!counties[county]) counties[county] = { results: [] };
+    counties[county].results.push(row);
+  }
+});
+
+for (var c in counties) {
+  var results = counties[c].results;
+  var winner = { Dem: { votepct: 0 }, GOP: { votepct: 0 } };
+  results.forEach(function(r) {
+    if (r.votepct > winner[r.party].votepct) {
+      winner[r.party] = r;
+    }
+  });
+  counties[c].winner = winner;
+}
+
+var dems = "Clinton Sanders".split(" ");
+
+%>
+
 <!doctype html>
 <html lang="en-US">
   <head>
@@ -13,7 +55,50 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
     <responsive-child>
-      <!-- content goes here -->
+      <h1>2016 Presidential Primary</h1>
+      <main class="interactive">
+        <div class="map">
+          <nav class="map-controls">
+            Show results for:
+            <a data-party="Dem" class="selected">Dem.</a> |
+            <a data-party="GOP">GOP</a>
+          </nav>
+          <%= t.include("assets/countyMap.svg") %>
+        </div>
+        <div class="results" data-mode="state">
+          <div class="state results-list">
+            <h2>Statewide</h2>
+            <div class="row">
+              <ul class="democratic">
+                <% dems.forEach(function(c) { %>
+                <li class="<%= c %> <%= statewide[c].winner ? "winner" : "" %>">
+                  <%= c %>: <%= statewide[c].votepct.toFixed(1) %>%
+                <% }); %>
+              </ul>
+              <ul class="republican">
+                <% gop.forEach(function(c) { %>
+                <li class="<%= c %> <%= statewide[c].winner ? "winner" : "" %>">
+                  <%= c %>: <%= statewide[c].votepct.toFixed(1) %>%
+                <% }); %>
+              </ul>
+            </div>
+            <div class="chatter">
+              &laquo; Click a county for detailed results
+            </div>
+          </div>
+          <div class="county results-list">
+            <h2 class="county-name"></h2>
+            <div class="row">
+              <ul class="democratic"> </ul>
+              <ul class="republican"> </ul>
+            </div>
+            <a class="back-to-state">&laquo; Back to statewide results</a>
+          </div>
+          <div class="date-time">
+            Updated: May <%= date.getDate() %>, <%= timestring %>
+          </div>
+        </div>
+      </main>
     </responsive-child>
 
     <script src="app.js" async></script>
