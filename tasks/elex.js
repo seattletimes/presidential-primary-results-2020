@@ -42,14 +42,17 @@ module.exports = function(grunt) {
     var now = new Date();
     var day = 1000 * 60 * 60 * 24;
     var today;
-    if (date) {
-      // date is provided
-      var [m, d, y] = date.split("/").map(Number);
-      today = new Date(y, m - 1, d);
-    } else {
-      // start from tomorrow and work back
-      today = new Date(now.valueOf() + day);
-    }
+    // if (date) {
+    //   // date is provided
+    //   var [m, d, y] = date.split("/").map(Number);
+    //   today = new Date(y, m - 1, d);
+    // } else {
+    //   // start from tomorrow and work back
+    //   today = new Date(now.valueOf() + day);
+    // }
+    var [m, d, y] = [3, 10, 2020];
+    today = new Date(y, m - 1, d);
+
     // Our window is 48 hours back in time
     // this should catch everything in the last day regardless of TZ
     var retroactive = new Date(today.valueOf() - day * 2);
@@ -58,7 +61,8 @@ module.exports = function(grunt) {
       r => r.alwaysRun || (r.timestamp <= today && r.timestamp >= retroactive)
     );
 
-    var test = grunt.option("test");
+    // var test = grunt.option("test");
+    var test = true;
     var offline = grunt.option("offline");
     var live = !grunt.option("archive");
     var overrides = {
