@@ -80,7 +80,7 @@ module.exports = function(grunt) {
         var unmatched = [];
 
         races.forEach(function(contest) {
-          var { states, office, date, ids, stateOnly, filename } = contest;
+           var { states, office, date, ids, stateOnly, filename } = contest;
 
           var fromAP = results.filter(function(result) {
             if (ids.length) {
@@ -90,6 +90,7 @@ module.exports = function(grunt) {
               states.indexOf(result.state) > -1 &&
               result.date == date;
           });
+
           if (!fromAP.length) {
             return unmatched.push(contest);
           }
@@ -113,8 +114,8 @@ module.exports = function(grunt) {
             races: subsetResults("state")
           };
 
-          // console.log(`Generating results: ${filename}.json`)
-          grunt.file.write(`build/data/${filename}.json`, serialize(stateResults));
+          console.log(`Generating results: ${filename}.json`)
+          grunt.file.write(`data/${filename}.json`, serialize(stateResults));
 
           if (office != "H" && !stateOnly) {
             var countyResults = subsetResults("county");
@@ -127,8 +128,9 @@ module.exports = function(grunt) {
                 }
               })
             });
-            // console.log(`Generating county results: ${filename}_counties.json`)
-            grunt.file.write(`build/data/${filename}_counties.json`, serialize(countyResults));
+
+            console.log(`Generating county results: ${filename}_counties.json`)
+            grunt.file.write(`data/${filename}_counties.json`, serialize(countyResults));
           }
 
         });
@@ -149,8 +151,8 @@ module.exports = function(grunt) {
         var delegateFile = ["delegates", now.getMonth() + 1, now.getDate(), now.getFullYear()].join("_");
         var report = await api.getDelegates();
         var reportJSON = serialize(report);
-        grunt.file.write(`build/data/${delegateFile}.json`, reportJSON);
-        grunt.file.write("build/data/delegates.json", reportJSON);
+        grunt.file.write(`data/${delegateFile}.json`, reportJSON);
+        grunt.file.write("data/delegates.json", reportJSON);
       })
       .then(done)
       .catch(err => console.log(err));

@@ -6,13 +6,13 @@ Runs tasks on an automated basis
 
 /** config variables **/
 
-var branch = "prod"; //Git branch for deployment
-var interval = 1000 * 60 * 3; //30 minutes by default
+var branch = "master"; //Git branch for deployment
+var interval = 1000 * 60 * 3;
 var commands = [
   "git checkout " + branch, //grab latest
   "git pull origin " + branch,
   "npm i", //install any new packages
-  "grunt sheets static publish:live" //deploy
+  "grunt sheets static publish" //deploy
 ];
 
 /** end config **/

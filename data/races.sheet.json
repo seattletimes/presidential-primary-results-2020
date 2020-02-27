@@ -1,8 +1,10 @@
 [
   {
-    "date": "3/10/2020",
     "state": "WA",
+    "office": "D",
+    "date": "3/10/2020",
     "raceID": 49391,
-    "office": "D"
+    "stateOnly": false,
+    "filename": "results"
   }
 ]
