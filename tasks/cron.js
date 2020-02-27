@@ -34,6 +34,7 @@ var cron = function() {
       }
       c();
     });
+    location.reload();
   }, function() {
     //check error code, log result
     var err = errors.length;
