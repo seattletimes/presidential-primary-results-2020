@@ -30,4 +30,4 @@ elements.forEach(function(el) {
 	el.addEventListener("click", function() {
 		document.querySelector("#results").innerHTML = el.id;
 	})
-})
+});

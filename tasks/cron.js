@@ -44,8 +44,6 @@ var cron = function() {
     //should be error-tolerant
     setTimeout(cron, interval);
   });
-
-  location.reload();
 };
 
 module.exports = function(grunt) {
