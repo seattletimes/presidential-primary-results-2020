@@ -34,7 +34,6 @@ var cron = function() {
       }
       c();
     });
-    location.reload();
   }, function() {
     //check error code, log result
     var err = errors.length;
@@ -45,6 +44,8 @@ var cron = function() {
     //should be error-tolerant
     setTimeout(cron, interval);
   });
+
+  location.reload();
 };
 
 module.exports = function(grunt) {
