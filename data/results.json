@@ -6,7 +6,7 @@
       "date": "3/10/2020",
       "test": true,
       "state": "WA",
-      "eevp": 0,
+      "eevp": 3,
       "party": "Dem",
       "type": "Primary",
       "office": "P",
@@ -14,123 +14,123 @@
         {
           "id": "49391",
           "party": "Dem",
-          "updated": 1582826312707,
+          "updated": 1582831056229,
           "precincts": 2000,
-          "reporting": 0,
-          "reportingPercentage": 0,
+          "reporting": 456,
+          "reportingPercentage": 22.8,
           "winners": [],
-          "total": 0,
+          "total": 83061,
           "candidates": [
             {
               "first": "Joe",
               "last": "Biden",
               "party": "Dem",
               "id": "1036",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Michael",
-              "last": "Bloomberg",
-              "party": "Dem",
-              "id": "32324",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Pete",
-              "last": "Buttigieg",
-              "party": "Dem",
-              "id": "67933",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Tulsi",
-              "last": "Gabbard",
-              "party": "Dem",
-              "id": "62589",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Amy",
-              "last": "Klobuchar",
-              "party": "Dem",
-              "id": "51526",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Bernie",
-              "last": "Sanders",
-              "party": "Dem",
-              "id": "1445",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Tom",
-              "last": "Steyer",
-              "party": "Dem",
-              "id": "67935",
-              "votes": 0,
-              "percentage": null
+              "votes": 22903,
+              "percentage": 27.57
             },
             {
               "first": "Elizabeth",
               "last": "Warren",
               "party": "Dem",
               "id": "62244",
-              "votes": 0,
-              "percentage": null
+              "votes": 17999,
+              "percentage": 21.67
+            },
+            {
+              "first": "Bernie",
+              "last": "Sanders",
+              "party": "Dem",
+              "id": "1445",
+              "votes": 13350,
+              "percentage": 16.07
+            },
+            {
+              "first": "Michael",
+              "last": "Bloomberg",
+              "party": "Dem",
+              "id": "32324",
+              "votes": 11180,
+              "percentage": 13.46
+            },
+            {
+              "first": "Pete",
+              "last": "Buttigieg",
+              "party": "Dem",
+              "id": "67933",
+              "votes": 7964,
+              "percentage": 9.59
+            },
+            {
+              "first": "Amy",
+              "last": "Klobuchar",
+              "party": "Dem",
+              "id": "51526",
+              "votes": 2269,
+              "percentage": 2.73
             },
             {
               "last": "Uncommitted",
               "party": "Dem",
               "id": "100004",
-              "votes": 0,
-              "percentage": null
+              "votes": 2125,
+              "percentage": 2.56
             },
             {
-              "first": "Michael",
-              "last": "Bennet",
+              "first": "Tom",
+              "last": "Steyer",
               "party": "Dem",
-              "id": "59911",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Cory",
-              "last": "Booker",
-              "party": "Dem",
-              "id": "63133",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "John",
-              "last": "Delaney",
-              "party": "Dem",
-              "id": "61562",
-              "votes": 0,
-              "percentage": null
-            },
-            {
-              "first": "Deval",
-              "last": "Patrick",
-              "party": "Dem",
-              "id": "51516",
-              "votes": 0,
-              "percentage": null
+              "id": "67935",
+              "votes": 1842,
+              "percentage": 2.22
             },
             {
               "first": "Andrew",
               "last": "Yang",
               "party": "Dem",
               "id": "67936",
-              "votes": 0,
-              "percentage": null
+              "votes": 1304,
+              "percentage": 1.57
+            },
+            {
+              "first": "Tulsi",
+              "last": "Gabbard",
+              "party": "Dem",
+              "id": "62589",
+              "votes": 904,
+              "percentage": 1.09
+            },
+            {
+              "first": "Michael",
+              "last": "Bennet",
+              "party": "Dem",
+              "id": "59911",
+              "votes": 387,
+              "percentage": 0.47
+            },
+            {
+              "first": "John",
+              "last": "Delaney",
+              "party": "Dem",
+              "id": "61562",
+              "votes": 300,
+              "percentage": 0.36
+            },
+            {
+              "first": "Deval",
+              "last": "Patrick",
+              "party": "Dem",
+              "id": "51516",
+              "votes": 279,
+              "percentage": 0.34
+            },
+            {
+              "first": "Cory",
+              "last": "Booker",
+              "party": "Dem",
+              "id": "63133",
+              "votes": 255,
+              "percentage": 0.31
             }
           ]
         }
