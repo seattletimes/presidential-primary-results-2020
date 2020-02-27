@@ -13,12 +13,16 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
     <responsive-child>
-      <h1>2016 Presidential Primary</h1>
-        <div class="map">
-          <%= t.include("assets/countyMap.svg") %>
+      <main class="interactive">
+        <h1>2016 Presidential Primary</h1>
+        <div class="flexbox">
+          <div id="map">
+            <%= t.include("assets/countyMap.svg") %>
+          </div>
+          <div id="results">
+          </div>
         </div>
-        <div class="results" data-mode="state">
-        </div>
+      </main>
     </responsive-child>
 
     <script src="app.js" async></script>

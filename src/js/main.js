@@ -25,3 +25,9 @@ results.forEach(function(county_results) {
 
 	el.setAttribute("fill", colors[current_winner.last]);
 });
+
+elements.forEach(function(el) {
+	el.addEventListener("click", function() {
+		document.querySelector("#results").innerHTML = el.id;
+	})
+})
