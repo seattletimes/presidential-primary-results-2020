@@ -1,9 +1,10 @@
 require("component-responsive-frame/child");
 
-var counties_by_fips = require("../../data/fips.sheet.json");
-var all_results = require("../../data/results_counties.json");
-var results = all_results[0].results;
-var elements = Array.from(document.querySelectorAll(".county"));
+var counties_by_fips = require("../../data/fips.sheet.json"),
+		all_results = require("../../data/results_counties.json"),
+	results = all_results[0].results,
+		all_candidates = require("../../data/candidates.sheet.json"),
+	candidates = all_candidates.filter(candidate => candidate.show === true);
 
 var colors = {
 	"Sanders": "#58b7b4",
@@ -13,12 +14,6 @@ var colors = {
 	"Klobuchar": "#8766aa",
 	"Bloomberg": "#cc5c3e"
 };
-
-var template = `<h2>County name</h2>
-  <p class="note">TK% of precincts reporting</p>
-  <ul class="candidates">
-    <li>First Last: TK%</li>
-  </ul>`;
 
 results.forEach(function(county_results) {
 	var fips = county_results.fips;
@@ -30,10 +25,20 @@ results.forEach(function(county_results) {
 	})[0];
 
 	el.setAttribute("fill", colors[current_winner.last]);
-});
 
-elements.forEach(function(el) {
 	el.addEventListener("click", function() {
-		document.querySelector("#results").innerHTML = el.id;
+		document.querySelector("#place-name").innerText = county_name;
+		document.querySelector("#reporting-percentage").innerText = county_results.reportingPercentage;
+		
+		var html = "";
+		candidates.forEach(function(c) {
+			var percentage = county_results.candidates.find(d => d.last === c.last).percentage;
+
+			html = html + "<li><span class='color-block " + c.last + "'></span>" + 
+				c.first + " " + c.last + 
+				": " + percentage + 
+				"%</li>";
+		});
+		document.querySelector("#candidates").innerHTML = html;
 	})
 });

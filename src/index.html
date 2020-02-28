@@ -23,9 +23,9 @@
             <%= t.include("assets/countyMap.svg") %>
           </div>
           <div id="results">
-            <h2>Washington state</h2>
-            <p class="note note--precincts"><%= results.reportingPercentage %>% of precincts reporting</p>
-            <ul class="candidates">
+            <h2 id="place-name">Washington state</h2>
+            <p class="note note--precincts"><span id="reporting-percentage"><%= results.reportingPercentage %></span>% of precincts reporting</p>
+            <ul id="candidates">
               <% json.candidates.forEach(function(candidate) { %>
                 <% if (candidate.show === true) { %>
                   <li><span class="color-block <%= candidate.last %>"></span><%= candidate.first %> <%= candidate.last %>: <%= results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
