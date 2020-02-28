@@ -6,12 +6,12 @@ var results = all_results[0].results;
 var elements = Array.from(document.querySelectorAll(".county"));
 
 var colors = {
-	"Sanders": "#3b99a7",
-	"Warren": "#e26e42",
-	"Buttigieg": "#bd4579",
-	"Biden": "#ffb609",
-	"Klobuchar": "#8357aa",
-	"Bloomberg": "#5278d8"
+	"Sanders": "#58b7b4",
+	"Warren": "#c45555",
+	"Buttigieg": "#d3b537",
+	"Biden": "#4995c4",
+	"Klobuchar": "#8766aa",
+	"Bloomberg": "#cc5c3e"
 };
 
 var template = `<h2>County name</h2>

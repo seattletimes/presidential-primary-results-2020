@@ -1,5 +1,12 @@
 @import "seattletimes";
 
+@sanders: #58b7b4;
+@warren: #c45555;
+@buttigieg: #d3b537;
+@biden: #4995c4;
+@klobuchar: #8766aa;
+@bloomberg: #cc5c3e;
+
 .interactive {
 	max-width: 680px;
 }
@@ -29,6 +36,10 @@ h1 {
 	width: 60%;
 }
 
+// .county {
+// 	fill: @df-light-gray;
+// }
+
 #results {
 	padding-left: 15px;
 }
@@ -42,6 +53,32 @@ h2 {
 	list-style-type: none;
 	margin-top: 15px;
 	padding-left: 0;
+}
+
+.color-block {
+	border-radius: 12px;
+	display: inline-block;
+	height: 12px;
+	margin-right: 6px;
+	width: 12px;
+	&.Sanders {
+		background-color: @sanders;
+	}
+	&.Warren {
+		background-color: @warren;
+	}
+	&.Buttigieg {
+		background-color: @buttigieg;
+	}
+	&.Biden {
+		background-color: @biden;
+	}
+	&.Klobuchar {
+		background-color: @klobuchar;
+	}
+	&.Bloomberg {
+		background-color: @bloomberg;
+	}
 }
 
 .caption::after {

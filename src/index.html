@@ -28,7 +28,7 @@
             <ul class="candidates">
               <% json.candidates.forEach(function(candidate) { %>
                 <% if (candidate.show === true) { %>
-                  <li><%= candidate.first %> <%= candidate.last %>: <%= results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
+                  <li><span class="color-block <%= candidate.last %>"></span><%= candidate.first %> <%= candidate.last %>: <%= results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
                 <% } %>
               <% }); %>
             </ul>
