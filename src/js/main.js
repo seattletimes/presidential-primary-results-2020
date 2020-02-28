@@ -14,6 +14,12 @@ var colors = {
 	"Bloomberg": "#5278d8"
 };
 
+var template = `<h2>County name</h2>
+  <p class="note">TK% of precincts reporting</p>
+  <ul class="candidates">
+    <li>First Last: TK%</li>
+  </ul>`;
+
 results.forEach(function(county_results) {
 	var fips = county_results.fips;
 	var county_name = counties_by_fips[fips].county;

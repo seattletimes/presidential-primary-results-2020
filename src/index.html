@@ -1,4 +1,6 @@
-<!doctype html>
+<% 
+  results = json.results.races[0].results[0] 
+%><!doctype html>
 <html lang="en-US">
   <head>
     <%= t.include("partials/_head.html", grunt.data.json) %>
@@ -14,13 +16,27 @@
     <% } %>
     <responsive-child>
       <main class="interactive">
-        <h1>2016 Presidential Primary</h1>
+        <h1>Presidential primary results</h1>
+        <p class="note note--timestamp">Last updated TK:00 p.m.</p>
         <div class="flexbox">
           <div id="map">
             <%= t.include("assets/countyMap.svg") %>
           </div>
           <div id="results">
+            <h2>Washington state</h2>
+            <p class="note note--precincts"><%= results.reportingPercentage %>% of precincts reporting</p>
+            <ul class="candidates">
+              <% json.candidates.forEach(function(candidate) { %>
+                <% if (candidate.show === true) { %>
+                  <li><%= candidate.first %> <%= candidate.last %>: <%= results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
+                <% } %>
+              <% }); %>
+            </ul>
           </div>
+        </div>
+        <div class="caption">
+          <p class="data-source">Source: Associated Press</p>
+          <p class="art-credit">Hilary Fung / The Seattle Times</p>
         </div>
       </main>
     </responsive-child>
