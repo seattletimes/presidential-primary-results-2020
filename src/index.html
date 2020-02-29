@@ -20,9 +20,11 @@
         <p class="note note--timestamp">Last updated TK:00 p.m.</p>
         <div class="flexbox">
           <div id="map">
+            <div id="tooltip" class="hidden"></div>
             <%= t.include("assets/countyMap.svg") %>
           </div>
           <div id="results">
+            <p id="statewide-button" class="hidden">Back to statewide results</p>
             <h2 id="place-name">Washington state</h2>
             <p class="note note--precincts"><span id="reporting-percentage"><%= results.reportingPercentage %></span>% of precincts reporting</p>
             <ul id="candidates">

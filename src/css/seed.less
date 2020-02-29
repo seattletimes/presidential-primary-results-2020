@@ -37,6 +37,26 @@ h1 {
 }
 
 .county {
+	fill: @df-light-gray;
+}
+
+#tooltip {
+	background-color: #fff;
+	border: 1px solid @df-light-gray;
+	border-radius: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	padding: 3px 5px;
+	position: absolute;
+	&.hidden {
+		display: none;
+	}
+	&.shown {
+		display: block;
+	}
+}
+
+.county {
 	cursor: pointer;
 	&:hover {
 		fill-opacity: 70%;
@@ -47,6 +67,23 @@ h1 {
 
 #results {
 	padding-left: 15px;
+}
+
+#statewide-button {
+	color: @df-middle-gray;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 0 0 10px 0;
+	text-decoration: underline;
+	&:hover {
+		color: @df-blue;
+	}
+	&.hidden {
+		display: none;
+	}
+	&.shown {
+		display: block;
+	}
 }
 
 h2 {
