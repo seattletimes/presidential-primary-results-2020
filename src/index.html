@@ -3,7 +3,7 @@
     show_all_candidates = true;
 
   var d = new Date(),
-    timestring = d.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit'}),
+    timestring = d.toLocaleTimeString("en-US").replace(/:\d+ /, ' '),
     timestamp = timestring.split(" ")[0] + " " + timestring.split(" ")[1][0].toLowerCase() + ".m.";
 %><!doctype html>
 <html lang="en-US">
