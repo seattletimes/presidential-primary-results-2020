@@ -6,7 +6,8 @@ var	all_statewide_results = require("../../data/results.json"),
 		all_county_results = require("../../data/results_counties.json"),
 	results = all_county_results[0].results,
 		all_candidates = require("../../data/candidates.sheet.json"),
-	candidates = all_candidates.filter(c => c.show === true);
+		candidates = all_candidates;
+	// candidates = all_candidates.filter(c => c.show === true);
 
 var tooltip = document.querySelector("#tooltip"),
 	statewide_button = document.querySelector("#statewide-button"),
@@ -34,8 +35,7 @@ var showStatewideResults = function() {
 
 	html = "";
 	candidates.forEach(function(c) {
-		var percentage = statewide_results.candidates.find(d => d.last === c.last).percentage;
-
+		var percentage = (statewide_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : statewide_results.candidates.find(d => d.last === c.last).percentage;
 		html = html + "<li><span class='color-block " + c.last + "'></span>" + 
 			c.first + " " + c.last + 
 			": " + percentage + 
@@ -49,12 +49,12 @@ results.forEach(function(county_results) {
 	var fips = county_results.fips;
 	var county_name = counties_by_fips[fips].county;
 	var el = document.querySelector("#" + counties_by_fips[fips].el_id);
-
 	var current_winner = county_results.candidates.sort(function(a, b) {
 		return b.votes - a.votes;
 	})[0];
 
-	el.setAttribute("fill", colors[current_winner.last]);
+	var fill = (colors[current_winner.last] ? colors[current_winner.last] : "rgb(224, 224, 224)")
+	el.setAttribute("fill", fill);
 
 	el.addEventListener("mouseenter", function(e) {
 		tooltip.classList.remove("hidden");
@@ -84,7 +84,7 @@ results.forEach(function(county_results) {
 
 		html = "";
 		candidates.forEach(function(c) {
-			var percentage = county_results.candidates.find(d => d.last === c.last).percentage;
+			var percentage = (county_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : county_results.candidates.find(d => d.last === c.last).percentage;
 
 			html = html + "<li><span class='color-block " + c.last + "'></span>" + 
 				c.first + " " + c.last + 
