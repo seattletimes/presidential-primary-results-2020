@@ -34,6 +34,10 @@ var showStatewideResults = function() {
 	reporting_percentage.innerText = statewide_results.reportingPercentage;
 
 	html = "";
+	candidates = candidates.sort(function(a, b) {
+  return statewide_results.candidates.find(c => c.last === b.last).votes
+  	- statewide_results.candidates.find(c => c.last === a.last).votes;
+	});
 	candidates.forEach(function(c) {
 		var percentage = (statewide_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : statewide_results.candidates.find(d => d.last === c.last).percentage;
 		html = html + "<li><span class='color-block " + c.last + "'></span>" + 
@@ -83,6 +87,10 @@ results.forEach(function(county_results) {
 		reporting_percentage.innerText = county_results.reportingPercentage;
 
 		html = "";
+		candidates = candidates.sort(function(a, b) {
+			return county_results.candidates.find(c => c.last === b.last).votes
+  	- county_results.candidates.find(c => c.last === a.last).votes;
+		});
 		candidates.forEach(function(c) {
 			var percentage = (county_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : county_results.candidates.find(d => d.last === c.last).percentage;
 
