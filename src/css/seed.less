@@ -2,13 +2,14 @@
 
 @sanders: #58b7b4;
 @warren: #c45555;
-@buttigieg: #d3b537;
+@gabbard: #d3b537;
 @biden: #4995c4;
-@klobuchar: #8766aa;
 @bloomberg: #cc5c3e;
+@dropout-text: #afafaf;
+@dropout-fill: @df-light-gray;
 
 .interactive {
-	max-width: 680px;
+	max-width: 960px;
 }
 
 h1 {
@@ -45,7 +46,7 @@ h1 {
 		width: 100%;
 	}
 	@media (@tablet-up) {
-		width: 60%;
+		width: 45%;
 	}
 }
 
@@ -78,22 +79,22 @@ h1 {
 	padding-left: 15px;
 }
 
-#statewide-button {
-	color: @df-middle-gray;
-	cursor: pointer;
-	font-size: 16px;
-	margin: 0 0 10px 0;
-	text-decoration: underline;
-	&:hover {
-		color: @df-blue;
-	}
-	&.hidden {
-		display: none;
-	}
-	&.shown {
-		display: block;
-	}
-}
+// #statewide-button {
+// 	color: @df-middle-gray;
+// 	cursor: pointer;
+// 	font-size: 16px;
+// 	margin: 0 0 10px 0;
+// 	text-decoration: underline;
+// 	&:hover {
+// 		color: @df-blue;
+// 	}
+// 	&.hidden {
+// 		display: none;
+// 	}
+// 	&.shown {
+// 		display: block;
+// 	}
+// }
 
 h2 {
 	font-size: 20px;
@@ -102,9 +103,16 @@ h2 {
 
 #candidates {
 	font-size: 15px;
-	list-style-type: none;
-	margin-top: 15px;
+	margin-top: 5px;
 	padding-left: 0;
+}
+
+.candidate {
+	margin: 0;
+}
+
+.dropout {
+	color: @dropout-text;
 }
 
 .color-block {
@@ -119,17 +127,20 @@ h2 {
 	&.Warren {
 		background-color: @warren;
 	}
-	&.Buttigieg {
-		background-color: @buttigieg;
-	}
 	&.Biden {
 		background-color: @biden;
 	}
-	&.Klobuchar {
-		background-color: @klobuchar;
-	}
 	&.Bloomberg {
 		background-color: @bloomberg;
+	}
+	&.Gabbard {
+		background-color: @gabbard;
+	}
+	&.Uncommitted {
+		background-color: @dropout-fill;
+	}
+	.dropout & {
+		background-color: @dropout-fill;
 	}
 }
 

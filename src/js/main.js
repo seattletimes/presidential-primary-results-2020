@@ -26,28 +26,28 @@ var colors = {
 	"Bloomberg": "#cc5c3e"
 };
 
-var showStatewideResults = function() {
-	statewide_button.classList.remove("shown");
-	statewide_button.classList.add("hidden");
+// var showStatewideResults = function() {
+// 	statewide_button.classList.remove("shown");
+// 	statewide_button.classList.add("hidden");
 
-	place_name.innerText = "Washington state";
-	reporting_percentage.innerText = statewide_results.reportingPercentage;
+// 	place_name.innerText = "Washington state";
+// 	reporting_percentage.innerText = statewide_results.reportingPercentage;
 
-	html = "";
-	candidates = candidates.sort(function(a, b) {
-  return statewide_results.candidates.find(c => c.last === b.last).votes
-  	- statewide_results.candidates.find(c => c.last === a.last).votes;
-	});
-	candidates.forEach(function(c) {
-		var percentage = (statewide_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : statewide_results.candidates.find(d => d.last === c.last).percentage;
-		html = html + "<li><span class='color-block " + c.last + "'></span>" + 
-			c.first + " " + c.last + 
-			": " + percentage + 
-			"%</li>";
-	});
+// 	html = "";
+// 	candidates = candidates.sort(function(a, b) {
+//   return statewide_results.candidates.find(c => c.last === b.last).votes
+//   	- statewide_results.candidates.find(c => c.last === a.last).votes;
+// 	});
+// 	candidates.forEach(function(c) {
+// 		var percentage = (statewide_results.candidates.find(d => d.last === c.last).percentage === null) ? 0 : statewide_results.candidates.find(d => d.last === c.last).percentage;
+// 		html = html + "<li><span class='color-block " + c.last + "'></span>" + 
+// 			c.first + " " + c.last + 
+// 			": " + percentage + 
+// 			"%</li>";
+// 	});
 
-	candidates_el.innerHTML = html;
-};
+// 	candidates_el.innerHTML = html;
+// };
 
 results.forEach(function(county_results) {
 	var fips = county_results.fips;
@@ -104,6 +104,6 @@ results.forEach(function(county_results) {
 	});
 });
 
-statewide_button.addEventListener("click", function() {
-	showStatewideResults();
-});
+// statewide_button.addEventListener("click", function() {
+// 	showStatewideResults();
+// });

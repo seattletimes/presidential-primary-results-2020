@@ -34,26 +34,23 @@
             <%= t.include("assets/countyMap.svg") %>
           </div>
           <div id="results">
-            <p id="statewide-button" class="hidden">Back to statewide results</p>
+            <!-- <p id="statewide-button" class="hidden">Back to statewide results</p> -->
             <h2 id="place-name">Washington state</h2>
             <p class="note note--precincts"><span id="reporting-percentage"><%= results.reportingPercentage %></span>% of precincts reporting</p>
-            <ul id="candidates">
-              <% if (show_all_candidates === true) { %>
+            <div id="candidates">
+              <div>
                 <% sorted_candidates.forEach(function(candidate) { %>
-                  <li><span class="color-block <%= candidate.last %>"></span><%= candidate.first %> <%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
+                  <p class="candidate <%= candidate.dropped_out ? 'dropout' : '' %>"><span class="color-block <%= candidate.last %>"></span><%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</p>
                 <% }); %>
-              <% } else { %>
-                <% sorted_candidates.forEach(function(candidate) { %>
-                  <% if (candidate.show === true) { %>
-                    <li><span class="color-block <%= candidate.last %>"></span><%= candidate.first %> <%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</li>
-                  <% } %>
-                <% }); %>
-              <% } %>
-            </ul>
+              </div>
+              <div>
+                
+              </div>
+            </div>
           </div>
         </div>
         <div class="caption">
-          <p class="data-source">Source: Associated Press</p>
+          <p class="data-source">Note: Candidates in gray have dropped out of the race. Source: Associated Press</p>
           <p class="art-credit">Hilary Fung / The Seattle Times</p>
         </div>
       </main>
