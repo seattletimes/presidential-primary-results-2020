@@ -1,5 +1,6 @@
 <% 
   var results = json.results.races[0].results[0],
+    counties = Object.values(json.fips),
     candidates = json.candidates,
     sorted_candidates = candidates.sort(function(a, b) {
       return results.candidates.find(c => c.last === b.last).votes - results.candidates.find(c => c.last === a.last).votes;
@@ -17,7 +18,7 @@
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content="180">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -33,18 +34,27 @@
             <div id="tooltip" class="hidden"></div>
             <%= t.include("assets/countyMap.svg") %>
           </div>
-          <div id="results">
-            <!-- <p id="statewide-button" class="hidden">Back to statewide results</p> -->
-            <h2 id="place-name">Washington state</h2>
-            <p class="note note--precincts"><span id="reporting-percentage"><%= results.reportingPercentage %></span>% of precincts reporting</p>
-            <div id="candidates">
-              <div>
+          <div class="results-container">
+            <div class="results" id="statewide-results">
+              <h2>Washington state</h2>
+              <p class="note note--precincts"><span><%= results.reportingPercentage %></span>% of precincts reporting</p>
+              <div class="candidates">
                 <% sorted_candidates.forEach(function(candidate) { %>
                   <p class="candidate <%= candidate.dropped_out ? 'dropout' : '' %>"><span class="color-block <%= candidate.last %>"></span><%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</p>
                 <% }); %>
               </div>
-              <div>
-                
+            </div>
+            <div class="results">
+              <select id="county-selector" class="selector">
+                <% counties.forEach(function(county) { %>
+                  <option value="<%= county.key %>"><%= county.county %></option>
+                <% }); %>
+              </select>
+              <div id="county-results" class="hidden">
+                <!-- <h2 id="county-name"></h2> -->
+                <p class="note note--precincts"><span id="reporting-percentage"></span>% of precincts reporting</p>
+                <div class="candidates" id="county-results__candidates">
+                </div>
               </div>
             </div>
           </div>
