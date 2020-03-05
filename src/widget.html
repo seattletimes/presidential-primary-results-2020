@@ -27,14 +27,15 @@
     <% } %>
     <responsive-child>
       <main class="widget">
-        <h1 class="widget__hed">Presidential primary results, Washington state</h1>
+        <div class="widget__banner"></div>
+        <h1 class="widget__hed">Washington presidential primary results</h1>
         <p class="note widget__note">Last updated <%= timestamp %> | <span><%= results.reportingPercentage %></span>% of precincts reporting</p>
         <div class="widget__candidates">
           <% sorted_candidates.forEach(function(candidate) { %>
             <% if (candidate.show === true) { %>
               <div class="widget__candidate <%= candidate.last %>">
                 <p class="widget__candidate-name"><%= candidate.last %></p>
-                <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %>%</p>
+                <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %><span class="widget__small-text">%</span></p>
               </div>
             <% } %>
           <% }); %>

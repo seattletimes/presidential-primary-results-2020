@@ -224,6 +224,15 @@ label {
 	width: 100%;
 }
 
+.widget__banner {
+	background-position: 50% -24px;
+	background-size: 80px 45px;
+	background-repeat: repeat-x;
+	background-image: radial-gradient(ellipse 80px 45px,
+	#FFF 0px, #FFF 10px, #C23 10px, #C23 20px, #FFF 20px, #FFF 30px, #0777b3 30px, #0777b3 40px, #FFF 40px);
+	height: 25px;
+}
+
 .widget__hed {
 	font-size: 22px;
 	margin: 4px auto;
@@ -250,31 +259,43 @@ label {
 		margin-right: 0;
 	}
 	&.Sanders {
-		background-color: @sanders;
+		background-color: lighten(@sanders, 10%);
 	}
 	&.Warren {
-		background-color: @warren;
+		background-color: lighten(@warren, 10%);
 	}
 	&.Gabbard {
-		background-color: @gabbard;
+		background-color: lighten(@gabbard, 10%);
 	}
 	&.Biden {
-		background-color: @biden;
+		background-color: lighten(@biden, 10%);
 	}
 	&.Bloomberg {
-		background-color: @bloomberg;
+		background-color: lighten(@bloomberg, 10%);
 	}
 }
 
 .widget__candidate-name, .widget__candidate-percentage {
 	font-family: @df-sans;
 	font-weight: bold;
-	margin: 5px auto;
 	text-align: center;
+}
+
+.widget__candidate-name {
+	font-size: 22px;
+	line-height: 24px;
+	margin-top: 10px;
+	margin-bottom: 0;
 }
 
 .widget__candidate-percentage {
 	font-size: 28px;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+
+.widget__small-text {
+	font-size: 20px;
 }
 
 .widget__data-source {
