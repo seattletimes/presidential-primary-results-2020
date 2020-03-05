@@ -1,0 +1,53 @@
+<% 
+  var results = json.results.races[0].results[0],
+    counties = Object.values(json.fips),
+    candidates = json.candidates,
+    sorted_candidates = candidates.sort(function(a, b) {
+      return results.candidates.find(c => c.last === b.last).votes - results.candidates.find(c => c.last === a.last).votes;
+    }),
+    show_all_candidates = true;  
+
+  var d = new Date(),
+    timestring = d.toLocaleTimeString("en-US").replace(/:\d+ /, ' '),
+    timestamp = timestring.split(" ")[0] + " " + timestring.split(" ")[1][0].toLowerCase() + ".m.";
+%><!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+      <main class="widget">
+        <h1 class="widget__hed">Presidential primary results, Washington state</h1>
+        <p class="note widget__note">Last updated <%= timestamp %> | <span><%= results.reportingPercentage %></span>% of precincts reporting</p>
+        <div class="widget__candidates">
+          <% sorted_candidates.forEach(function(candidate) { %>
+            <% if (candidate.show === true) { %>
+              <div class="widget__candidate <%= candidate.last %>">
+                <p class="widget__candidate-name"><%= candidate.last %></p>
+                <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</p>
+              </div>
+            <% } %>
+          <% }); %>
+        </div>
+        <p class="data-source widget__data-source">Source: Associated Press</p>
+        <p class="widget__link"><a href="#">See full results</a></p>
+      </main>
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>

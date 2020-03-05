@@ -15,16 +15,17 @@
 h1 {
 	margin: 0;
 	text-align: center;
-	@media (@mobile) {
+	@media @mobile {
 		font-size: 22px;
 	}
-	@media (@tablet-up) {
+	@media @tablet-up {
 		font-size: 28px;
 	}
 }
 
 .note {
 	color: #666;
+	font-family: @df-sans;
 	font-size: 0.8em;
 	font-style: italic;
 	margin: 0;
@@ -36,16 +37,16 @@ h1 {
 }
 
 .flexbox {
-	@media (@desktop-up) {
+	@media @desktop-up {
 		display: flex;
 	}
 }
 
 #map {
-	@media (@tablet) {
+	@media @tablet {
 		width: 100%;
 	}
-	@media (@desktop-up) {
+	@media @desktop-up {
 		width: 45%;
 	}
 }
@@ -76,10 +77,10 @@ h1 {
 }
 
 .results-container {
-	@media (@tablet) {
+	@media @tablet {
 		width: 100%;
 	}
-	@media (@desktop-up) {
+	@media @desktop-up {
 		padding-left: 15px;
 		width: 55%;
 	}
@@ -99,11 +100,11 @@ h2 {
 	font-size: 15px;
 	margin-top: 5px;
 	padding-left: 0;
-	@media (@tablet) {
+	@media @tablet {
 		column-count: 2;
 		column-width: 50%;
 	}
-	@media (@desktop-up) {
+	@media @desktop-up {
 		column-count: 3;
 		column-width: 33.33%;
 	}
@@ -205,4 +206,76 @@ label {
 
 .data-source, .art-credit {
 	margin: 10px 0 0 0;
+}
+
+// homepage widget
+.widget {
+	margin: auto;
+	max-width: 970px;
+	width: 100%;
+}
+
+.widget__hed {
+	font-size: 22px;
+	margin: 4px auto;
+}
+
+.widget__note {
+	margin: 4px auto;
+	text-align: center;
+}
+
+.widget__candidates {
+	display: flex;
+}
+
+.widget__candidate {
+	border-radius: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 20%;
+	&:first-child {
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+	&.Sanders {
+		border: 3px solid @sanders;
+	}
+	&.Warren {
+		border: 3px solid @warren;
+	}
+	&.Gabbard {
+		border: 3px solid @gabbard;
+	}
+	&.Biden {
+		border: 3px solid @biden;
+	}
+	&.Bloomberg {
+		border: 3px solid @bloomberg;
+	}
+}
+
+.widget__candidate-name, .widget__candidate-percentage {
+	font-family: @df-sans;
+	font-weight: bold;
+	margin: 5px auto;
+	text-align: center;
+}
+
+.widget__candidate-percentage {
+	font-size: 28px;
+}
+
+.widget__data-source {
+	float: right;
+	margin-top: 0;
+}
+
+.widget__link {
+	clear: both;
+	font-family: @df-sans;
+	margin: 10px auto 0;
+	text-align: center;
 }
