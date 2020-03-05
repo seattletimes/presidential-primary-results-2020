@@ -44,6 +44,9 @@ h1 {
 
 #map {
 	@media @tablet {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 450px;
 		width: 100%;
 	}
 	@media @desktop-up {
@@ -231,9 +234,9 @@ label {
 
 .widget__candidate {
 	border-radius: 5px;
+	flex: 1;
 	margin-left: 5px;
 	margin-right: 5px;
-	width: 20%;
 	&:first-child {
 		margin-left: 0;
 	}
@@ -241,19 +244,19 @@ label {
 		margin-right: 0;
 	}
 	&.Sanders {
-		border: 3px solid @sanders;
+		background-color: @sanders;
 	}
 	&.Warren {
-		border: 3px solid @warren;
+		background-color: @warren;
 	}
 	&.Gabbard {
-		border: 3px solid @gabbard;
+		background-color: @gabbard;
 	}
 	&.Biden {
-		border: 3px solid @biden;
+		background-color: @biden;
 	}
 	&.Bloomberg {
-		border: 3px solid @bloomberg;
+		background-color: @bloomberg;
 	}
 }
 
