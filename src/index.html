@@ -18,7 +18,7 @@
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
-    <meta http-equiv="refresh" content="180">
+    <meta http-equiv="refresh" content="60">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -40,7 +40,7 @@
               <p class="note note--precincts"><span><%= results.reportingPercentage %></span>% of precincts reporting</p>
               <div class="candidates">
                 <% sorted_candidates.forEach(function(candidate) { %>
-                  <p class="candidate <%= candidate.dropped_out ? 'dropout' : '' %>"><span class="color-block <%= candidate.last %>"></span><%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage %>%</p>
+                  <p class="candidate <%= candidate.dropped_out ? 'dropout' : '' %>"><span class="color-block <%= candidate.last %>"></span><%= candidate.last %>: <%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %>%</p>
                 <% }); %>
               </div>
             </div>

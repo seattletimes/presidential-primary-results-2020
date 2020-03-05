@@ -36,7 +36,7 @@ var show_county_results = function(results) {
 			- results.candidates.find(c => c.last === a.last).votes;
 		});
 	candidates.forEach(function(c) {
-		var percentage = (results.candidates.find(a => a.last === c.last).percentage === null) ? 0 : results.candidates.find(d => d.last === c.last).percentage;
+		var percentage = (results.candidates.find(a => a.last === c.last).percentage === null) ? 0 : results.candidates.find(d => d.last === c.last).percentage.toFixed(1);
 
 		html = html + "<p class='candidate " + 
 			(c.dropped_out ? "dropout'" : "'") + 
