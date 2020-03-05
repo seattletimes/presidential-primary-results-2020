@@ -258,21 +258,22 @@ label {
 	&:last-child {
 		margin-right: 0;
 	}
-	&.Sanders {
-		background-color: lighten(@sanders, 10%);
-	}
-	&.Warren {
-		background-color: lighten(@warren, 10%);
-	}
-	&.Gabbard {
-		background-color: lighten(@gabbard, 10%);
-	}
-	&.Biden {
-		background-color: lighten(@biden, 10%);
-	}
-	&.Bloomberg {
-		background-color: lighten(@bloomberg, 10%);
-	}
+	// &.Sanders {
+	// 	background-color: lighten(@sanders, 10%);
+	// }
+	// &.Warren {
+	// 	background-color: lighten(@warren, 10%);
+	// }
+	// &.Gabbard {
+	// 	background-color: lighten(@gabbard, 10%);
+	// }
+	// &.Biden {
+	// 	background-color: lighten(@biden, 10%);
+	// }
+	// &.Bloomberg {
+	// 	background-color: lighten(@bloomberg, 10%);
+	// }
+	background-color: @df-light-gray;
 }
 
 .widget__candidate-name, .widget__candidate-percentage {
@@ -308,4 +309,15 @@ label {
 	font-family: @df-sans;
 	margin: 10px auto 0;
 	text-align: center;
+	a {
+		border: 1px solid @df-blue;
+		border-radius: 5px;
+		padding: 2px 12px;
+	}
+	&:hover {
+		a {
+			background-color: @df-blue;
+			color: #fff;
+		}
+	}
 }
