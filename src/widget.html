@@ -34,7 +34,7 @@
             <% if (candidate.show_on_widget === true) { %>
               <div class="widget__candidate <%= candidate.last %>">
                 <div class="widget__headshot <%= candidate.last %>"></div>
-                <p class="widget__candidate-name"><%= candidate.last %></p>
+                <p class="widget__candidate-name"><span class="widget__first-name"><%= candidate.first %></span> <%= candidate.last %></p>
                 <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %><span class="widget__small-text">%</span></p>
               </div>
             <% } %>
