@@ -224,15 +224,6 @@ label {
 	width: 100%;
 }
 
-.widget__banner {
-	background-position: 50% -24px;
-	background-size: 80px 45px;
-	background-repeat: repeat-x;
-	background-image: radial-gradient(ellipse 80px 45px,
-	#FFF 0px, #FFF 10px, #C23 10px, #C23 20px, #FFF 20px, #FFF 30px, #0777b3 30px, #0777b3 40px, #FFF 40px);
-	height: 25px;
-}
-
 .widget__hed {
 	font-size: 22px;
 	margin: 4px auto;
@@ -301,23 +292,71 @@ label {
 
 .widget__data-source {
 	float: right;
-	margin-top: 0;
+	margin-top: 11px;
 }
 
 .widget__link {
-	clear: both;
+	border-bottom: 1px solid @df-blue;
 	font-family: @df-sans;
-	margin: 10px auto 0;
+	left: 50%;
+	margin: 5px 0 0 -60px;
+	position: absolute;
 	text-align: center;
-	a {
-		border: 1px solid @df-blue;
-		border-radius: 5px;
-		padding: 2px 12px;
-	}
 	&:hover {
-		a {
-			background-color: @df-blue;
-			color: #fff;
-		}
+		border-bottom: 1px solid darken(@df-blue, 15%);
+		color: darken(@df-blue, 15%);
+	}
+}
+
+// delegates tracker
+main.interactive--delegates {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.chart-outer {
+	position: relative;
+}
+
+.chart-inner {
+	position: relative;
+}
+
+.chart__g {
+	position: absolute;
+	width: 100%;
+}
+
+.chart__bar {
+	background-color: @df-blue;
+	position: absolute;
+}
+
+.graphic-text {
+	font-family: @df-sans;
+}
+
+.graphic-text--small {
+	font-size: 0.8em;
+}
+
+.names {
+	float: left;
+	margin: 0;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.numbers {
+	margin-top: 0;
+	margin-bottom: 0;
+	position: absolute;
+}
+
+.delegates__caption {
+	&:after  {
+		clear: both;
+		content: "";
+		display: block;
 	}
 }

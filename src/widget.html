@@ -4,9 +4,8 @@
     candidates = json.candidates,
     sorted_candidates = candidates.sort(function(a, b) {
       return results.candidates.find(c => c.last === b.last).votes - results.candidates.find(c => c.last === a.last).votes;
-    }),
-    show_all_candidates = true;  
-
+    });
+    
   var d = new Date(),
     timestring = d.toLocaleTimeString("en-US").replace(/:\d+ /, ' '),
     timestamp = timestring.split(" ")[0] + " " + timestring.split(" ")[1][0].toLowerCase() + ".m.";
@@ -18,8 +17,8 @@
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
-    <meta http-equiv="refresh" content="60">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<!--     <meta http-equiv="refresh" content="60">
+ -->    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <% if (json.project.production && !json.project.embedded) { %>
@@ -32,7 +31,7 @@
         <p class="note widget__note">Last updated <%= timestamp %> | <span><%= results.reportingPercentage %></span>% of precincts reporting</p>
         <div class="widget__candidates">
           <% sorted_candidates.forEach(function(candidate) { %>
-            <% if (candidate.show === true) { %>
+            <% if (candidate.show_on_widget === true) { %>
               <div class="widget__candidate <%= candidate.last %>">
                 <p class="widget__candidate-name"><%= candidate.last %></p>
                 <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %><span class="widget__small-text">%</span></p>
