@@ -286,25 +286,66 @@ label {
 	margin-bottom: 8px;
 }
 
+.widget__headshot {
+	background-image: url("./assets/sanders-grayscale.png");
+	background-repeat: no-repeat;
+	background-color: #000;
+	border-radius: 65px;
+	height: 65px;
+	margin: 8px 10px;
+	width: 65px;
+	@media (max-width: 370px) {
+		display: none;
+	}
+	@media (min-width: 370px) {
+		&.Biden {
+			background-image: url("./assets/Biden.png");
+			background-position: 9px 5px;
+			background-size: 46px;
+			float: left;
+		}
+		&.Sanders {
+			background-image: url("./assets/Sanders.png");
+			background-position: 7px 2px;
+			background-size: 50px;
+			float: right;
+		}
+	}
+}
+
 .widget__small-text {
 	font-size: 20px;
 }
 
 .widget__data-source {
 	float: right;
-	margin-top: 11px;
+	@media (max-width: 650px) {
+		margin: 0;
+	}
+	@media (min-width: 650px) {
+		margin-top: 11px;
+	}
 }
 
 .widget__link {
-	border-bottom: 1px solid @df-blue;
 	font-family: @df-sans;
-	left: 50%;
-	margin: 5px 0 0 -60px;
-	position: absolute;
 	text-align: center;
 	&:hover {
-		border-bottom: 1px solid darken(@df-blue, 15%);
 		color: darken(@df-blue, 15%);
+	}
+	@media (max-width: 650px) {
+		clear: both;
+	}
+	@media (min-width: 650px) {
+		left: 50%;
+		margin: 5px 0 0 -130px;
+		position: absolute;
+	}
+	a {
+		border-bottom: 1px solid @df-blue;
+	}
+	&:hover a {
+		border-bottom: 1px solid darken(@df-blue, 15%);
 	}
 }
 

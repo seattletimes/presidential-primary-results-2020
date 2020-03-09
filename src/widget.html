@@ -33,6 +33,7 @@
           <% sorted_candidates.forEach(function(candidate) { %>
             <% if (candidate.show_on_widget === true) { %>
               <div class="widget__candidate <%= candidate.last %>">
+                <div class="widget__headshot <%= candidate.last %>"></div>
                 <p class="widget__candidate-name"><%= candidate.last %></p>
                 <p class="widget__candidate-percentage"><%= (results.candidates.find(c => c.last === candidate.last).percentage === null) ? 0 : results.candidates.find(c => c.last === candidate.last).percentage.toFixed(1) %><span class="widget__small-text">%</span></p>
               </div>
@@ -40,8 +41,8 @@
           <% }); %>
         </div>
         <div class="widget__footer">
-          <p class="data-source widget__data-source">Source: Associated Press</p>
-          <p class="widget__link"><a href="https://www.seattletimes.com/?p=12561806">See full county-by-county results</a></p>
+          <p class="data-source widget__data-source">Source: The Associated Press</p>
+          <p class="widget__link"><a href="https://www.seattletimes.com/?p=12561806" target="_blank" rel="noopener">See full county-by-county results</a></p>
         </div>
       </main>
     </responsive-child>
