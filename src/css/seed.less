@@ -308,55 +308,9 @@ label {
 	}
 }
 
-// delegates tracker
-main.interactive--delegates {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.chart-outer {
-	position: relative;
-}
-
-.chart-inner {
-	position: relative;
-}
-
-.chart__g {
-	position: absolute;
-	width: 100%;
-}
-
-.chart__bar {
-	background-color: @df-blue;
-	position: absolute;
-}
-
-.graphic-text {
-	font-family: @df-sans;
-}
-
-.graphic-text--small {
-	font-size: 0.8em;
-}
-
-.names {
-	float: left;
-	margin: 0;
-	padding-right: 5px;
-	text-align: right;
-}
-
-.numbers {
-	margin-top: 0;
-	margin-bottom: 0;
-	position: absolute;
-}
-
-.delegates__caption {
-	&:after  {
-		clear: both;
-		content: "";
-		display: block;
-	}
+.widget__footer::after {
+	clear: both;
+	content: "";
+	display: block;
+	height: 5px;
 }

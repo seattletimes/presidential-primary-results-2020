@@ -5,7 +5,7 @@
     sorted_candidates = candidates.sort(function(a, b) {
       return results.candidates.find(c => c.last === b.last).votes - results.candidates.find(c => c.last === a.last).votes;
     });
-    
+
   var d = new Date(),
     timestring = d.toLocaleTimeString("en-US").replace(/:\d+ /, ' '),
     timestamp = timestring.split(" ")[0] + " " + timestring.split(" ")[1][0].toLowerCase() + ".m.";
@@ -17,8 +17,8 @@
       <%= t.include("partials/_dataLayer.html") %>
       <%= t.include("partials/_gtm.html") %>
     <% } %>
-<!--     <meta http-equiv="refresh" content="60">
- -->    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <% if (json.project.production && !json.project.embedded) { %>
@@ -39,8 +39,10 @@
             <% } %>
           <% }); %>
         </div>
-        <p class="data-source widget__data-source">Source: Associated Press</p>
-        <p class="widget__link"><a href="#">See full results</a></p>
+        <div class="widget__footer">
+          <p class="data-source widget__data-source">Source: Associated Press</p>
+          <p class="widget__link"><a href="https://www.seattletimes.com/?p=12561806">See full results</a></p>
+        </div>
       </main>
     </responsive-child>
 
