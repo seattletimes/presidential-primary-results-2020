@@ -12,7 +12,7 @@ var commands = [
   "git checkout " + branch, //grab latest
   "git pull origin " + branch,
   "npm i", //install any new packages
-  "grunt sheets static publish" //deploy
+  "grunt sheets static publish:live" //deploy
 ];
 
 /** end config **/
