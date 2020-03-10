@@ -72,6 +72,12 @@ results_by_county.forEach(function(results) {
 		tooltip.classList.remove("hidden");
 		tooltip.classList.add("shown")
 		tooltip.innerHTML = county_name;
+
+		var mouseX = e.pageX,
+			mouseY = e.pageY;
+
+		tooltip.style.left = mouseX - 30 + "px";
+		tooltip.style.top = mouseY - 30 + "px";
 	});
 
 	el.addEventListener("mousemove", function(e) {
