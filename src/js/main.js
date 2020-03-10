@@ -21,8 +21,8 @@ var colors = {
 	"Sanders": "#58b7b4",
 	"Warren": "#c45555",
 	"Buttigieg": "#d3b537",
-	"Bloomberg": "#4995c4",
-	"Biden": "#cc5c3e"
+	"Bloomberg": "#CC5C3E",
+	"Biden": "#1B6387"
 };
 
 var show_county_results = function(results) {

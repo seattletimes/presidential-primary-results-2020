@@ -5,9 +5,15 @@
     sorted_candidates = candidates.sort(function(a, b) {
       return results.candidates.find(c => c.last === b.last).votes - results.candidates.find(c => c.last === a.last).votes;
     }),
-    show_all_candidates = true;  
+    show_all_candidates = true; 
+
+  var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]; 
 
   var d = new Date(),
+    month = months[d.getMonth()],
+    day = d.getDate(),
+    year = d.getFullYear(),
+    printdate = month + " " + day + ", " + year,
     timestring = d.toLocaleTimeString("en-US").replace(/:\d+ /, ' '),
     timestamp = timestring.split(" ")[0] + " " + timestring.split(" ")[1][0].toLowerCase() + ".m.";
 %><!doctype html>
@@ -28,7 +34,7 @@
     <responsive-child>
       <main class="interactive">
         <h1>Democratic presidential primary results</h1>
-        <p class="note note--timestamp">Last updated <%= timestamp %></p>
+        <p class="note note--timestamp">Last updated <%= printdate %> at <%= timestamp %></p>
         <div class="flexbox">
           <div id="map">
             <div id="tooltip" class="hidden"></div>
