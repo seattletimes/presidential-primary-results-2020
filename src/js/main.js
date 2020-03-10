@@ -1,4 +1,4 @@
-require("component-responsive-frame/child");
+require("component-responsive-frame");
 
 var	all_statewide_results = require("../../data/results.json"),
 	all_county_results = require("../../data/results_counties.json");
