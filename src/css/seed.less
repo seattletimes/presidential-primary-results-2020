@@ -253,22 +253,12 @@ label {
 	&:last-child {
 		margin-right: 0;
 	}
-	// &.Sanders {
-	// 	background-color: lighten(@sanders, 10%);
-	// }
-	// &.Warren {
-	// 	background-color: lighten(@warren, 10%);
-	// }
-	// &.Gabbard {
-	// 	background-color: lighten(@gabbard, 10%);
-	// }
-	// &.Biden {
-	// 	background-color: lighten(@biden, 10%);
-	// }
-	// &.Bloomberg {
-	// 	background-color: lighten(@bloomberg, 10%);
-	// }
-	background-color: @df-light-gray;
+	&.Sanders {
+		background-color: lighten(@sanders, 20%);
+	}
+	&.Biden {
+		background-color: #588da7;
+	}
 }
 
 .widget__candidate-name, .widget__candidate-percentage {
@@ -310,7 +300,7 @@ label {
 	@media (min-width: 370px) {
 		&.Biden {
 			background-image: url("./assets/Biden.png");
-			background-position: 9px 5px;
+			background-position: 9px 3px;
 			background-size: 46px;
 			float: left;
 		}
