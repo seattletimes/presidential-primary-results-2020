@@ -61,8 +61,7 @@ module.exports = function(grunt) {
       r => r.alwaysRun || (r.timestamp <= today && r.timestamp >= retroactive)
     );
 
-    // var test = grunt.option("test");
-    var test = true;
+    var test = grunt.option("test");
     var offline = grunt.option("offline");
     var live = !grunt.option("archive");
     var overrides = {
