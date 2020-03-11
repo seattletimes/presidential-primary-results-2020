@@ -28,7 +28,7 @@
       <main class="widget">
         <div class="widget__banner"></div>
         <h1 class="widget__hed">Washington Democratic presidential primary results</h1>
-        <p class="note widget__note">Updated <%= timestamp %> | Ballot count to continue for days</p>
+        <p class="note widget__note">Updated at <%= timestamp %> | Ballot count to continue for days</p>
         <div class="widget__candidates">
           <% sorted_candidates.forEach(function(candidate) { %>
             <% if (candidate.show_on_widget === true) { %>
