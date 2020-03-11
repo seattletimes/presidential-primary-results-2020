@@ -252,9 +252,15 @@ label {
 	margin-right: 5px;
 	&:first-child {
 		margin-left: 0;
+		.widget__headshot {
+			float: left;
+		}
 	}
 	&:last-child {
 		margin-right: 0;
+		.widget__headshot {
+			float: right;
+		}
 	}
 	&.Sanders {
 		background-color: lighten(@sanders, 20%);
@@ -305,13 +311,11 @@ label {
 			background-image: url("./assets/Biden.png");
 			background-position: 9px 3px;
 			background-size: 46px;
-			float: left;
 		}
 		&.Sanders {
 			background-image: url("./assets/Sanders.png");
 			background-position: 7px 2px;
 			background-size: 50px;
-			float: right;
 		}
 	}
 }
