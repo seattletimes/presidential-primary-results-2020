@@ -77,7 +77,8 @@ var show_county_results = function(results) {
 	county_results_el.classList.remove("hidden");
 	county_results_el.classList.add("shown");
 
-	var county_name = counties[results.fips].county;
+	var county_name = counties[results.fips].county,
+		el_id = counties[results.fips].el_id;
 	html = "";
 	candidates = candidates.sort(function(a, b) {
 		return results.candidates.find(c => c.last === b.last).votes
@@ -98,6 +99,10 @@ var show_county_results = function(results) {
 	candidates_el.innerHTML = html;
 
 	county_selector.value = results.fips;
+	Array.from(county_elements).forEach(el => {
+		el.classList.remove("selected");
+	});
+	document.querySelector("#" + el_id).classList.add("selected");
 };
 
 results_by_county.forEach(function(results) {
@@ -148,13 +153,6 @@ results_by_county.forEach(function(results) {
 county_selector.addEventListener('change', function() {
 	var results = results_by_county.find(c => c.fips === this.value);
 	show_county_results(results);
-
-	var el_id = this.selectedOptions[0].getAttribute('data-county');
-	Array.from(county_elements).forEach(el => {
-		el.classList.remove("selected");
-	});
-	document.querySelector("#" + el_id).classList.add("selected");
 });
 
 show_county_results(results_by_county.find(c => c.fips === "53033"));
-document.querySelector("#King").classList.add("selected");
