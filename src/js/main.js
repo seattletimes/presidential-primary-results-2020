@@ -1,5 +1,6 @@
 require("component-responsive-frame");
 
+// Polyfill for Array.prototype.find
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
 if (!Array.prototype.find) {
   Object.defineProperty(Array.prototype, 'find', {
@@ -58,8 +59,8 @@ var statewide_results = all_statewide_results.races[0].results[0],
 var tooltip = document.querySelector("#tooltip"),
 	county_selector = document.querySelector("#county-selector"),
 	county_results_el = document.querySelector("#county-results"),
+	county_elements = document.querySelectorAll(".county"),
 	county_name_el = document.querySelector("#county-name"),
-	reporting_percentage_el = document.querySelector("#reporting-percentage"),
 	candidates_el = document.querySelector("#county-results__candidates");
 
 var html = "";
@@ -94,7 +95,6 @@ var show_county_results = function(results) {
 	});
 
 	// county_name_el.innerText = county_name;
-	reporting_percentage_el.innerText = results.reportingPercentage;
 	candidates_el.innerHTML = html;
 
 	county_selector.value = results.fips;
@@ -145,9 +145,16 @@ results_by_county.forEach(function(results) {
 	});
 });
 
-county_selector.addEventListener('change', function(e) {
-	var results = results_by_county.find(e => e.fips === this.value);
+county_selector.addEventListener('change', function() {
+	var results = results_by_county.find(c => c.fips === this.value);
 	show_county_results(results);
+
+	var el_id = this.selectedOptions[0].getAttribute('data-county');
+	Array.from(county_elements).forEach(el => {
+		el.classList.remove("selected");
+	});
+	document.querySelector("#" + el_id).classList.add("selected");
 });
 
-show_county_results(results_by_county.find(e => e.fips === "53033"));
+show_county_results(results_by_county.find(c => c.fips === "53033"));
+document.querySelector("#King").classList.add("selected");
