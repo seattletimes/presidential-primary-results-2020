@@ -42,15 +42,14 @@ module.exports = function(grunt) {
     var now = new Date();
     var day = 1000 * 60 * 60 * 24;
     var today;
-    // if (date) {
-    //   // date is provided
-    //   var [m, d, y] = date.split("/").map(Number);
-    //   today = new Date(y, m - 1, d);
-    // } else {
-    //   // start from tomorrow and work back
-    //   today = new Date(now.valueOf() + day);
-    // }
-    var [m, d, y] = [3, 10, 2020];
+    if (date) {
+      // date is provided
+      var [m, d, y] = date.split("/").map(Number);
+      today = new Date(y, m - 1, d);
+    } else {
+      // start from tomorrow and work back
+      today = new Date(now.valueOf() + day);
+    }
     today = new Date(y, m - 1, d);
 
     // Our window is 48 hours back in time
